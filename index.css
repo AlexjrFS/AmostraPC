@@ -1,0 +1,39 @@
+.carousel {
+    margin: 0 auto;
+    animation-name: carouselAnim;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    position: relative;
+    width: 80%;
+    height: 40rem;
+    
+    }
+    h1{
+        font-size: 7rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 5rem;
+    }
+
+    
+    @keyframes carouselAnim {
+    0% { background-image: url("../ekaizen/imagens/Cpu\ gamer\ amd.jpg");  
+        background-repeat: no-repeat;
+        background-size:cover;} 
+    33% { background-image: url("../ekaizen/imagens/acer.png");  
+        background-repeat: no-repeat;
+        background-size:cover; } 
+    66% { background-image: url("../ekaizen/imagens/cpu\ i5.jpg");  
+        background-repeat: no-repeat;
+        background-size:cover;}
+    100% { background-image: url("../ekaizen/imagens/i9.jpg");  
+        background-repeat: no-repeat;
+        background-size:cover;} 
+    }
+    .h1{
+        text-align: center;
+        margin-top: 5rem;
+    }
+    h1{
+        font-size: 5rem;
+    }
