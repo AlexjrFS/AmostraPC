@@ -1,85 +1,89 @@
-const Formulario = document.getElementById("Formulario");
-Formulario.addEventListener('submit', v => {
-    v.preventDefault();
-    const FormData = new FormData(Paes);
-    
-    const pao = {};
+const form = document.getElementById('form')
+const username = document.getElementById('username')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+const passwordtwo = document.getElementById('password-two')
 
-    formData.forEach((valor, atributo) => pao[atributo] = valor);
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
 
-    fetch( "http://10.5.9.21/paes", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify(pao)
-
-    }).then(r => r.json())
-    .then(data => alert('Pão Feito'))
-    .catch(err => alert(err));
-    
+    checkInputs()
 })
 
-/*  const meuForm = document.getElementById("meuForm");
-    const preencherFotoForm = document.getElementById("preencherFotoForm");
-    const nomeError = document.getElementById('nomeError');
+function checkInputs() {
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
+    const usernameValue = username.value.trim()
+    const emailValue = email.value.trim()
+    const passwordValue = password.value.trim()
+    const passwordtwoValue = passwordtwo.value.trim()
 
-    meuForm.addEventListener('submit', ev => {
-      ev.preventDefault();
-      const formData = new FormData(meuForm);
-      const produto = {};
-
-
-      formData.forEach((valor, atributo) => produto[atributo] = valor);
-
-      if(produto.nome.length < 5) {
-        console.log('here error')
-        nomeError.style = { display: 'block', color: 'red'}
-        return;
-      }
-
-      console.log(JSON.stringify(produto))
-      fetch('http://localhost:38000/app/produtos', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(produto)
-      })
-        .then(r => r.json())
-    })
-
-    preencherFotoForm.addEventListener('submit', ev2 => {
-      ev2.preventDefault();
-      
-     
-      const formData2 = new FormData(preencherFotoForm);
-      fetch('http://localhost:38000/app/produtos/' + id + '/photo', {
-        method: 'PUT',
-        body: formData2
-      })
-        .then(r => r.json())
-    })
-
-    function loadProduto() {
-     
-      if (id) {
+    if(usernameValue === '') {
         
-
-        fetch('http://localhost:38000/app/produtos/' + id)
-          .then(r => r.json())
-          .then(produto => {
-            console.log(produto)
-            document.getElementById("nome").value = produto.nome
-            document.getElementById("descricao").value = produto.descricao
-            document.getElementById("preco").value = produto.preco
-            document.getElementById("serie").value = produto.serie
-
-          })
-
-      } else {
-        document.getElementById('preencherFotoDiv').style.display="none"
-      }
+        setErrorFor(username, 'Preencha esse campo' );
+        alert('Preencha todos os campos abaixo')
+    } else {
+        
+        setSuccessFor(username)
     }
 
+    if(emailValue === '') {
+        
+        setErrorFor(email, 'Preencha esse campo')
+    } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Email inválido');
+        alert('E-mail inválido')
+    } else {
+       
+        setSuccessFor(email)
+    }
+   
+    if(passwordValue === '') {
+      
+        setErrorFor(password, 'Preencha esse campo')
 
-    loadProduto();*/
+    } else if(passwordValue.length < 8) { 
+      
+        setErrorFor(password, 'Senha deve ter mais que 8 caracteres' );
+        alert('Senha deve ter mais que 8 caracteres')
+    } else {
+        
+        setSuccessFor(password) 
+    }
+
+    if(passwordtwoValue === '') {
+       
+        setErrorFor(passwordtwo, 'Preencha esse campo')
+
+    } else if(passwordtwoValue !== passwordValue) { 
+        setErrorFor(passwordtwo, 'Senhas não são iguais');
+        alert('As senhas não combinam')
+    } else {
+        
+        setSuccessFor(passwordtwo)
+    }
+
+}
+
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small')
+
+    small.innerText = message
+    
+
+    formControl.className = 'form-control error'
+  
+}
+
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+
+    formControl.className = 'form-control success';
+   
+}
+
+
+
+function isEmail(email) {
+    return /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(email)
+}
