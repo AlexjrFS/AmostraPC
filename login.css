@@ -1,0 +1,31 @@
+header ul {
+   
+    margin-top: 0.8rem;
+}
+#cadastro{
+    width: 80%;
+    height: 35rem;
+    margin-top: 2rem;
+    background-color: rgb(179, 177, 177);
+    border-radius: 15px;
+}
+#h1{
+    font-size: 5rem;
+    text-align: center;
+    font-family: Georgia, Times, 'Times New Roman', sans-serif;
+}
+#nome{
+width: 100%;
+}
+#sobre{
+    width: 100%;
+}
+#email{
+    width: 100%;
+}
+#senha{
+    width: 100%;
+}
+#con{
+    width: 100%;
+}

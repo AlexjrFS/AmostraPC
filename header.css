@@ -9,11 +9,13 @@ header
     color: white;
     width: 100%;
     z-index: 30;
-
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 header ul 
 {
+    
+    z-index: 40;
     text-align: center;
     top: -1rem;
 }
@@ -45,7 +47,7 @@ header img
 }
 #background
 {
-    background-image: url("../ekaizen/imagens/logo\ personalizada.png");
+    background-image: url("../Ezaiken/imagens/logo\ personalizada.png");
     opacity: 0.15;
     width: 100vw;
     height: 100vh;
