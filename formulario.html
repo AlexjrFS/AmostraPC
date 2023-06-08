@@ -29,33 +29,33 @@
           <h1 id="h1" > Faça seu cadastro: </h1>
             
               <section id="cadastro" class="container"> 
-                <form class="row g-3 needs-validation" novalidate>
+                <form class="row g-3 needs-validation" id="Formulario">
                   <div class="col-md-4" id="nome">
                     <label for="validationCustom01" class="form-label">Nome:</label>
-                    <input type="text" class="form-control" id="validationCustom01" value="" placeholder="Ex: Luis" required>
+                    <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Ex: Luis" required minlength="2">
                    
                   </div>
                   <div class="col-md-4" id="sobre">
                     <label for="validationCustom02" class="form-label">Sobrenome:</label>
-                    <input type="text" class="form-control" id="validationCustom02" value="" placeholder="Ex: Silva" required>
+                    <input type="text" class="form-control" id="Sobrenome" name="Sobrenome" placeholder="Ex: Silva" required minlength="3">
                    
                   </div>
                   <div class="col-md-4" id="email">
                     <label for="validationCustomUsername" class="form-label">Email:</label>
                     <div class="input-group has-validation">
-                      <span class="input-group-text" id="inputGroupPrepend">@</span>
-                      <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="ex: luis@gmail.com" required>
+                      
+                      <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="ex: luis@gmail.com" required>
                       
                     </div>
                   </div>
                   <div class="col-md-6" id="senha">
                     <label for="validationCustom03" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" id="validationCustom03" placeholder="(Mínimo 8 caracteres)" required>
+                    <input type="password" class="form-control" id="senha" name="senha" placeholder="(Mínimo 8 caracteres)" required minlength="8">
                    
                   </div>
                   <div class="col-md-3" id="con">
                     <label for="validationCustom04" class="form-label">Confirme sua senha:</label>
-                    <input type="password" class="form-control" id="validationCustom03" placeholder="A senha deve ser a mesma" required>
+                    <input type="password" class="form-control" id="confirme" name="confirme" placeholder="A senha deve ser a mesma" required minlength="8">
                    
                   </div>
                   
@@ -76,5 +76,7 @@
             </section>
           
     </main>
+    <script src="ekaizen.js"></script>
+    
 </body>
 </html>
