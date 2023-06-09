@@ -23,7 +23,8 @@ function checkInputs() {
         alert('Preencha todos os campos abaixo')
     } else {
         
-        setSuccessFor(username)
+        setSuccessFor(username);
+        
     }
 
     if(emailValue === '') {
@@ -62,7 +63,9 @@ function checkInputs() {
         setSuccessFor(passwordtwo)
     }
 
+    
 }
+
 
 function setErrorFor(input, message) {
     const formControl = input.parentElement;
