@@ -5,28 +5,28 @@
     animation-iteration-count: infinite;
     position: relative;
     width: 80%;
-    height: 40rem;
+    height: 35rem;
     
     }
     h1{
-        font-size: 5rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 5rem;
+    font-family: 'Lato', sans-serif;
     text-align: center;
     margin-top: 5rem;
     }
 
     
     @keyframes carouselAnim {
-    0% { background-image: url("../Ezaiken/imagens/Cpu\ gamer\ amd.jpg");  
+    0% { background-image: url("imagens/cpu\ 020g.png");  
         background-repeat: no-repeat;
         background-size:cover;} 
-    33% { background-image: url("../Ezaiken/imagens/acer.png");  
+    33% { background-image: url("imagens/i9.jpg");  
         background-repeat: no-repeat;
         background-size:cover; } 
-    66% { background-image: url("../Ezaiken/imagens/cpu\ i5.jpg");  
+    66% { background-image: url("imagens/cpu\ i5.jpg");  
         background-repeat: no-repeat;
         background-size:cover;}
-    100% { background-image: url("../Ezaiken/imagens/i9.jpg");  
+    100% { background-image: url("imagens/lenovo.jpg");  
         background-repeat: no-repeat;
         background-size:cover;} 
     }
